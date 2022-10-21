@@ -1,0 +1,27 @@
+<table class="table table-bordered table-hover" style="text-align: center">
+  <thead>
+    <th>Customer Id</th>
+    <th>Customer Name</th>
+    <th>Loan Amount</th>
+    <th>Trade Date</th>
+    <th>Loan Start Date</th>
+    <th>Maturity Date</th>
+    <th>Payment Frequency</th>
+    <th>Interest Rate</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of Details|paginate :{itemsPerPage :7, currentPage:p}">
+      <td>{{ item.customerId }}</td>
+      <td><a [routerLink]="['/displayEachPayment',item.customerName]">{{item.customerName}}</a></td>
+      <td>{{ item.loanAmount | currency:'INR':true:'2.2-4'}}</td>
+      <td>{{ item.tradeDate |date:"dd-MM-yyyy"}}</td>
+      <td>{{ item.loanStartDate |date:"dd-MM-yyyy"}}</td>
+      <td>{{ item.maturityDate |date:"dd-MM-yyyy"}}</td>
+      <td>{{ item.paymentFrequency }} months</td>
+      <td>{{ item.interestRate }}%</td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p=$event"
+style="float:left;"
+></pagination-controls>

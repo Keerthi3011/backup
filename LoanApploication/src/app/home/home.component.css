@@ -1,0 +1,21 @@
+.container{
+    width: 1000px;
+    height :345px;
+    text-align: center;
+    margin-top: 150px;
+}
+form{
+    /* background-color: rgba(210, 144, 235, 0.227); */
+    width: 1000px;
+    height :10px;
+    border-radius: 200px;
+    margin-left: 20%;
+}
+button{
+    font-size: large;
+    width: 250px;
+    height: 150px;
+    margin: 30px;
+    margin-top: 0%;
+    background-color:  rgba(202, 139, 202, 0.644);
+}
